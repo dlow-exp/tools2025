@@ -86,11 +86,6 @@ export default function CalculatorIndex() {
           </tbody>
         </table>
       </div>
-
-      {/* Footer */}
-      <div className="mt-8 p-4 border-t border-gray-200 text-center text-gray-500 text-sm">
-        <p>Built with Next.js • tools2025</p>
-      </div>
     </div>
   );
 }
