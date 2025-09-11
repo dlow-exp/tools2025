@@ -317,7 +317,6 @@ export default function DownloadSpeedCalculator() {
       'kbps': 'Kbps', 'kilobits/s': 'Kbps',
       'mbps': 'Mbps', 'megabits/s': 'Mbps',
       'gbps': 'Gbps', 'gigabits/s': 'Gbps',
-      'kb/s': 'Kb/s', 'mb/s': 'Mb/s', 'gb/s': 'Gb/s'
     };
     
     const mappedUnit = unitMappings[unitPart];
