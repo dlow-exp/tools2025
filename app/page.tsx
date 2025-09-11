@@ -6,6 +6,13 @@ export default function Home() {
       icon: '⚡',
       href: '/calculator/electricity',
       features: ['Multi-country support', 'Peak/off-peak rates', 'Auto locale detection']
+    },
+    {
+      name: 'Download Speed Calculator',
+      description: 'Calculate download speeds from file size and download time with support for various units',
+      icon: '📊',
+      href: '/calculator/download-speed',
+      features: ['Multiple size units', 'Time conversions', 'Real-time calculations']
     }
   ];
 

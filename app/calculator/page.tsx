@@ -6,6 +6,12 @@ export default function CalculatorIndex() {
       description: 'Calculate annual electricity costs with single/dual tariff support',
       lastModified: '2025-01-09',
     },
+    {
+      type: 'file',
+      name: 'download-speed/',
+      description: 'Calculate download speeds from file size and time',
+      lastModified: '2025-01-11',
+    },
   ];
 
   return (
@@ -64,7 +70,7 @@ export default function CalculatorIndex() {
                     className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
                   >
                     <span className="mr-2">
-                      {entry.type === 'directory' ? '📁' : '⚡'}
+                      {entry.type === 'directory' ? '📁' : entry.name === 'download-speed/' ? '📊' : '⚡'}
                     </span>
                     {entry.name}
                   </a>
