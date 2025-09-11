@@ -14,9 +14,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
       {/* Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="flex-1 max-w-6xl mx-auto px-4 py-16 w-full">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             Tools 2025
@@ -121,7 +121,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200">
+      <footer className="bg-white border-t border-gray-200 mt-auto">
         <div className="max-w-6xl mx-auto px-4 py-8">
           <div className="text-center text-gray-500">
             <p className="text-sm">Tools 2025 • Making everyday tasks easier</p>
