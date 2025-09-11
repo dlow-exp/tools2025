@@ -1,16 +1,17 @@
 export default function CalculatorIndex() {
   const calculatorEntries = [
     {
-      type: 'file',
-      name: 'electricity/',
-      description: 'Calculate annual electricity costs with single/dual tariff support',
-      lastModified: '2025-01-09',
+      type: "file",
+      name: "electricity/",
+      description:
+        "Calculate annual electricity costs with single/dual tariff support",
+      lastModified: "2025-01-09",
     },
     {
-      type: 'file',
-      name: 'download-speed/',
-      description: 'Calculate download speeds from file size and time',
-      lastModified: '2025-01-11',
+      type: "file",
+      name: "download-speed/",
+      description: "Calculate download speeds from file size and time",
+      lastModified: "2025-01-11",
     },
   ];
 
@@ -19,7 +20,10 @@ export default function CalculatorIndex() {
       {/* Header */}
       <div className="border-b border-gray-200 p-4">
         <div className="flex items-center gap-2 mb-2">
-          <a href="/" className="text-blue-600 hover:text-blue-800 hover:underline">
+          <a
+            href="/"
+            className="text-blue-600 hover:text-blue-800 hover:underline"
+          >
             /
           </a>
           <span className="text-gray-400">/</span>
@@ -34,8 +38,12 @@ export default function CalculatorIndex() {
           <thead>
             <tr className="border-b border-gray-200">
               <th className="text-left py-2 px-4 font-semibold">Name</th>
-              <th className="text-left py-2 px-4 font-semibold hidden sm:table-cell">Description</th>
-              <th className="text-left py-2 px-4 font-semibold hidden md:table-cell">Last modified</th>
+              <th className="text-left py-2 px-4 font-semibold hidden sm:table-cell">
+                Description
+              </th>
+              <th className="text-left py-2 px-4 font-semibold hidden md:table-cell">
+                Last modified
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -70,7 +78,11 @@ export default function CalculatorIndex() {
                     className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
                   >
                     <span className="mr-2">
-                      {entry.type === 'directory' ? '📁' : entry.name === 'download-speed/' ? '📊' : '⚡'}
+                      {entry.type === "directory"
+                        ? "📁"
+                        : entry.name === "download-speed/"
+                          ? "📊"
+                          : "⚡"}
                     </span>
                     {entry.name}
                   </a>

@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tools 2025",
-  description: "A collection of useful calculators and utilities to help with everyday tasks",
+  description:
+    "A collection of useful calculators and utilities to help with everyday tasks",
 };
 
 export default function RootLayout({
@@ -37,7 +38,7 @@ export default function RootLayout({
         <SpeedInsights />
         {/* Footer */}
         <footer className="border-t py-6 md:py-8">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <p className="text-sm text-muted-foreground">
                 Have suggestions or feedback?

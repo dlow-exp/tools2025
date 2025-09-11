@@ -1,8 +1,6 @@
-# Tools 2025 
+# Tools 2025
 
 Collection of tools.
-
-
 
 ## Getting Started
 

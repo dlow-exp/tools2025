@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuLink,
-} from '@/components/ui/navigation-menu';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 export default function Navigation() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/alternatives', label: 'Alternatives' },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/alternatives", label: "Alternatives" },
   ];
 
   return (
@@ -31,7 +31,8 @@ export default function Navigation() {
                     href={item.href}
                     className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                      pathname === item.href && "bg-accent text-accent-foreground"
+                      pathname === item.href &&
+                        "bg-accent text-accent-foreground",
                     )}
                   >
                     {item.label}
@@ -50,7 +51,7 @@ export default function Navigation() {
               href={item.href}
               className={cn(
                 "inline-flex h-9 items-center justify-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none",
-                pathname === item.href && "bg-accent text-accent-foreground"
+                pathname === item.href && "bg-accent text-accent-foreground",
               )}
             >
               {item.label}
