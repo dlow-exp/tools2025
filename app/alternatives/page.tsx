@@ -26,6 +26,14 @@ export default function AlternativesPage() {
       cons: [],
       category: "Online Tools",
     },
+    {
+      name: "Tiny tools",
+      description: "Links to other online tools",
+      url: "https://tiny-helpers.dev",
+      pros: [],
+      cons: [],
+      category: "Online Tools",
+    },
   ];
 
   const categories = [...new Set(alternatives.map((alt) => alt.category))];
