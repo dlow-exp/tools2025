@@ -6,6 +6,7 @@ export default function MortgageCalculator() {
   const [balance, setBalance] = useState("");
   const [rate, setRate] = useState("");
   const [overpayment, setOverpayment] = useState("");
+  const [isCompounded, setIsCompounded] = useState(true);
 
   const calculate = () => {
     const principal = parseFloat(balance);
@@ -16,12 +17,26 @@ export default function MortgageCalculator() {
       return null;
     }
 
-    // Daily interest formula: (Principal * Rate) / 365
-    const dailyInterestCurrent = (principal * annualRate) / 365;
+    let dailyInterestCurrent, dailyInterestNew;
+
+    if (isCompounded) {
+      // Daily compound interest formula
+      // Effective daily rate = (1 + annualRate)^(1/365) - 1
+      const dailyRate = Math.pow(1 + annualRate, 1 / 365) - 1;
+      dailyInterestCurrent = principal * dailyRate;
+      
+      const newBalance = Math.max(0, principal - extra);
+      dailyInterestNew = newBalance * dailyRate;
+    } else {
+      // Simple daily interest formula: (Principal * Rate) / 365
+      dailyInterestCurrent = (principal * annualRate) / 365;
+      
+      const newBalance = Math.max(0, principal - extra);
+      dailyInterestNew = (newBalance * annualRate) / 365;
+    }
     
     // New balance after hypothetical immediate overpayment
     const newBalance = Math.max(0, principal - extra);
-    const dailyInterestNew = (newBalance * annualRate) / 365;
     
     const dailySaving = dailyInterestCurrent - dailyInterestNew;
 
@@ -103,6 +118,37 @@ export default function MortgageCalculator() {
                     <span className="text-gray-500 sm:text-sm">%</span>
                   </div>
                 </div>
+              </div>
+
+              <div className="col-span-2">
+                <label className="flex items-center space-x-3 mb-2">
+                  <span className="text-sm font-medium text-gray-700">Interest Type</span>
+                </label>
+                <div className="flex items-center space-x-4">
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      className="form-radio h-4 w-4 text-indigo-600"
+                      checked={isCompounded}
+                      onChange={() => setIsCompounded(true)}
+                    />
+                    <span className="ml-2 text-sm text-gray-700">Daily Compounded (Default)</span>
+                  </label>
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      className="form-radio h-4 w-4 text-indigo-600"
+                      checked={!isCompounded}
+                      onChange={() => setIsCompounded(false)}
+                    />
+                    <span className="ml-2 text-sm text-gray-700">Simple Daily Interest</span>
+                  </label>
+                </div>
+                <p className="mt-1 text-xs text-gray-500">
+                  {isCompounded 
+                    ? "Calculates effective daily rate from APY: (1 + r)^(1/365) - 1" 
+                    : "Standard mortgage calculation: (Balance × Rate) / 365"}
+                </p>
               </div>
 
               <div className="col-span-2">
