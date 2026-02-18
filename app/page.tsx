@@ -8,9 +8,9 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, Download, ArrowLeftRight } from "lucide-react";
+import { ArrowRight, Calculator, Download, ArrowLeftRight, Home } from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
   const calculators = [
     {
       name: "Electricity Cost Calculator",
@@ -46,6 +46,18 @@ export default function Home() {
         "Weight (lb/kg)",
         "Length (ft/m, in/cm)",
         "Distance & Temp",
+      ],
+    },
+    {
+      name: "Mortgage Calculator",
+      description:
+        "Calculate monthly mortgage payments with support for interest-only periods, compound interest, and amortization schedules",
+      icon: <Home className="w-8 h-8" />,
+      href: "/calculator/mortgage",
+      features: [
+        "Amortization schedule",
+        "Daily compound interest",
+        "Interest-only periods",
       ],
     },
   ];
