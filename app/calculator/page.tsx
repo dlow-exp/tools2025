@@ -13,6 +13,12 @@ export default function CalculatorIndex() {
       description: "Calculate download speeds from file size and time",
       lastModified: "2025-01-11",
     },
+    {
+      type: "file",
+      name: "mortgage/",
+      description: "Calculate mortgage interest and overpayment savings",
+      lastModified: "2026-02-18",
+    },
   ];
 
   return (
@@ -82,7 +88,9 @@ export default function CalculatorIndex() {
                         ? "📁"
                         : entry.name === "download-speed/"
                           ? "📊"
-                          : "⚡"}
+                          : entry.name === "mortgage/"
+                            ? "🏠"
+                            : "⚡"}
                     </span>
                     {entry.name}
                   </a>
