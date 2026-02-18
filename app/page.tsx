@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, Download } from "lucide-react";
+import { ArrowRight, Calculator, Download, ArrowLeftRight } from "lucide-react";
 
 export default function Home() {
   const calculators = [
@@ -34,6 +34,18 @@ export default function Home() {
         "Multiple size units",
         "Time conversions",
         "Real-time calculations",
+      ],
+    },
+    {
+      name: "Unit Converter",
+      description:
+        "Convert between common units: weight, length, distance, and temperature measurements",
+      icon: <ArrowLeftRight className="w-8 h-8" />,
+      href: "/calculator/unit-converter",
+      features: [
+        "Weight (lb/kg)",
+        "Length (ft/m, in/cm)",
+        "Distance & Temp",
       ],
     },
   ];
