@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, Download, ArrowLeftRight, Home } from "lucide-react";
+import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal } from "lucide-react";
 
 export default function HomePage() {
   const calculators = [
@@ -59,6 +59,14 @@ export default function HomePage() {
         "Daily compound interest",
         "Interest-only periods",
       ],
+    },
+    {
+      name: "LaunchDaemon Generator",
+      description:
+        "Generate macOS LaunchDaemon and LaunchAgent plist files with step-by-step deployment instructions",
+      icon: <Terminal className="w-8 h-8" />,
+      href: "/calculator/launchdaemon",
+      features: ["Daemon & Agent", "Schedule options", "Deployment guide"],
     },
   ];
 
