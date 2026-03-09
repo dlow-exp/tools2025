@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal } from "lucide-react";
+import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal, Server } from "lucide-react";
 
 export default function HomePage() {
   const calculators = [
@@ -67,6 +67,14 @@ export default function HomePage() {
       icon: <Terminal className="w-8 h-8" />,
       href: "/calculator/launchdaemon",
       features: ["Daemon & Agent", "Schedule options", "Deployment guide"],
+    },
+    {
+      name: "Systemd Service Generator",
+      description:
+        "Generate Linux systemd .service and .timer unit files with security hardening and deployment instructions",
+      icon: <Server className="w-8 h-8" />,
+      href: "/calculator/systemd",
+      features: ["Service & Timer", "Security hardening", "Resource limits"],
     },
   ];
 
