@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal, Server, Keyboard } from "lucide-react";
+import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal, Server, Keyboard, Database } from "lucide-react";
 
 export default function HomePage() {
   const calculators = [
@@ -83,6 +83,14 @@ export default function HomePage() {
       icon: <Keyboard className="w-8 h-8" />,
       href: "/keyboard",
       features: ["Mac & Linux layouts", "Left/right modifiers", "Live key codes"],
+    },
+    {
+      name: "Data Viewer",
+      description:
+        "View and filter Parquet and CSV files entirely in the browser. Drop a file to explore its schema and rows — no upload, fully client-side.",
+      icon: <Database className="w-8 h-8" />,
+      href: "/parquet",
+      features: ["Parquet & CSV", "Column filters", "Global search"],
     },
   ];
 
