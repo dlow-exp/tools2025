@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal, Server } from "lucide-react";
+import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal, Server, Keyboard } from "lucide-react";
 
 export default function HomePage() {
   const calculators = [
@@ -75,6 +75,14 @@ export default function HomePage() {
       icon: <Server className="w-8 h-8" />,
       href: "/calculator/systemd",
       features: ["Service & Timer", "Security hardening", "Resource limits"],
+    },
+    {
+      name: "Keyboard Tester",
+      description:
+        "Visual keyboard layout that lights up keys as you press them. Supports Mac and Linux modifier keys with left/right distinction.",
+      icon: <Keyboard className="w-8 h-8" />,
+      href: "/keyboard",
+      features: ["Mac & Linux layouts", "Left/right modifiers", "Live key codes"],
     },
   ];
 
