@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 function htmlToMarkdown(html: string): string {
-  // Dynamic import is async; use sync turndown instead
-  // We'll initialise turndown at call time
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const TurndownService = require("turndown");
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { gfm } = require("turndown-plugin-gfm");
   const td = new TurndownService({
     headingStyle: "atx",
     hr: "---",
@@ -18,11 +18,7 @@ function htmlToMarkdown(html: string): string {
     emDelimiter: "_",
     strongDelimiter: "**",
   });
-  // Keep strikethrough
-  td.addRule("strikethrough", {
-    filter: ["del", "s", "strike"],
-    replacement: (content: string) => `~~${content}~~`,
-  });
+  td.use(gfm);
   return td.turndown(html);
 }
 
