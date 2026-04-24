@@ -8,7 +8,18 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, Download, ArrowLeftRight, Home, Terminal, Server, Keyboard, Database } from "lucide-react";
+import {
+  ArrowRight,
+  Calculator,
+  Download,
+  ArrowLeftRight,
+  Home,
+  Terminal,
+  Server,
+  Keyboard,
+  Database,
+  FileText,
+} from "lucide-react";
 
 export default function HomePage() {
   const calculators = [
@@ -42,11 +53,7 @@ export default function HomePage() {
         "Convert between common units: weight, length, distance, and temperature measurements",
       icon: <ArrowLeftRight className="w-8 h-8" />,
       href: "/calculator/unit-converter",
-      features: [
-        "Weight (lb/kg)",
-        "Length (ft/m, in/cm)",
-        "Distance & Temp",
-      ],
+      features: ["Weight (lb/kg)", "Length (ft/m, in/cm)", "Distance & Temp"],
     },
     {
       name: "Mortgage Calculator",
@@ -82,7 +89,11 @@ export default function HomePage() {
         "Visual keyboard layout that lights up keys as you press them. Supports Mac and Linux modifier keys with left/right distinction.",
       icon: <Keyboard className="w-8 h-8" />,
       href: "/keyboard",
-      features: ["Mac & Linux layouts", "Left/right modifiers", "Live key codes"],
+      features: [
+        "Mac & Linux layouts",
+        "Left/right modifiers",
+        "Live key codes",
+      ],
     },
     {
       name: "Data Viewer",
@@ -91,6 +102,14 @@ export default function HomePage() {
       icon: <Database className="w-8 h-8" />,
       href: "/parquet",
       features: ["Parquet & CSV", "Column filters", "Global search"],
+    },
+    {
+      name: "Rich Text to Markdown",
+      description:
+        "Paste formatted text from any source — web pages, Google Docs, Word — and instantly get clean Markdown output.",
+      icon: <FileText className="w-8 h-8" />,
+      href: "/richtext-to-markdown",
+      features: ["Paste any rich text", "Live conversion", "One-click copy"],
     },
   ];
 
