@@ -173,8 +173,8 @@ export default function ElectricityCalculator() {
   // Dual tariff settings
   const [peakCost, setPeakCost] = useState("");
   const [offPeakCost, setOffPeakCost] = useState("");
-  const [peakHours, setPeakHours] = useState("8");
-  const [offPeakHours, setOffPeakHours] = useState("16");
+  const [peakHours, setPeakHours] = useState("18");
+  const [offPeakHours, setOffPeakHours] = useState("6");
 
   // Auto-detect user's country (timezone first, then locale) and set defaults
   useEffect(() => {
@@ -186,10 +186,10 @@ export default function ElectricityCalculator() {
       setCostPerKwh(detectedCountry.defaultRate.toString());
     }
     if (!peakCost) {
-      setPeakCost((detectedCountry.defaultRate * 1.5).toFixed(3));
+      setPeakCost("0.28");
     }
     if (!offPeakCost) {
-      setOffPeakCost((detectedCountry.defaultRate * 0.7).toFixed(3));
+      setOffPeakCost("0.07");
     }
   }, []); // Empty dependency array means this runs once on mount
 
@@ -202,10 +202,10 @@ export default function ElectricityCalculator() {
         setCostPerKwh(country.defaultRate.toString());
       }
       if (!peakCost) {
-        setPeakCost((country.defaultRate * 1.5).toFixed(3));
+        setPeakCost("0.28");
       }
       if (!offPeakCost) {
-        setOffPeakCost((country.defaultRate * 0.7).toFixed(3));
+        setOffPeakCost("0.07");
       }
     }
   };
@@ -386,11 +386,9 @@ export default function ElectricityCalculator() {
                     type="number"
                     step="0.001"
                     min="0"
-                    value={
-                      peakCost || (selectedCountry.defaultRate * 1.5).toFixed(3)
-                    }
+                    value={peakCost || "0.28"}
                     onChange={(e) => setPeakCost(e.target.value)}
-                    placeholder={`Default: ${(selectedCountry.defaultRate * 1.5).toFixed(3)}`}
+                    placeholder="Default: 0.28"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
@@ -402,12 +400,9 @@ export default function ElectricityCalculator() {
                     type="number"
                     step="0.001"
                     min="0"
-                    value={
-                      offPeakCost ||
-                      (selectedCountry.defaultRate * 0.7).toFixed(3)
-                    }
+                    value={offPeakCost || "0.07"}
                     onChange={(e) => setOffPeakCost(e.target.value)}
-                    placeholder={`Default: ${(selectedCountry.defaultRate * 0.7).toFixed(3)}`}
+                    placeholder="Default: 0.07"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
