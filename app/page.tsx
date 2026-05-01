@@ -19,6 +19,7 @@ import {
   Keyboard,
   Database,
   FileText,
+  QrCode,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -110,6 +111,14 @@ export default function HomePage() {
       icon: <FileText className="w-8 h-8" />,
       href: "/richtext-to-markdown",
       features: ["Paste any rich text", "Live conversion", "One-click copy"],
+    },
+    {
+      name: "Text to QR Code",
+      description:
+        "Type or paste any text, URL, or contact info and instantly get a QR code you can download or copy.",
+      icon: <QrCode className="w-8 h-8" />,
+      href: "/text-to-qr",
+      features: ["Instant generation", "Download PNG", "Copy to clipboard"],
     },
   ];
 
