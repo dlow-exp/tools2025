@@ -235,6 +235,7 @@ export default function ElectricityCalculator() {
 
       return {
         annualKwh: annualKwh.toFixed(2),
+        monthlyKwh: (annualKwh / 12).toFixed(2),
         annualCost: annualCost.toFixed(2),
         dailyCost: (annualCost / 365).toFixed(2),
         monthlyCost: (annualCost / 12).toFixed(2),
@@ -274,17 +275,20 @@ export default function ElectricityCalculator() {
 
       return {
         annualKwh: totalAnnualKwh.toFixed(2),
+        monthlyKwh: (totalAnnualKwh / 12).toFixed(2),
         annualCost: totalAnnualCost.toFixed(2),
         dailyCost: (totalAnnualCost / 365).toFixed(2),
         monthlyCost: (totalAnnualCost / 12).toFixed(2),
         tariffBreakdown: {
           peak: {
             kwh: peakAnnualKwh.toFixed(2),
+            monthlyKwh: (peakAnnualKwh / 12).toFixed(2),
             cost: peakAnnualCost.toFixed(2),
             hours: peakHrs.toFixed(0),
           },
           offPeak: {
             kwh: offPeakAnnualKwh.toFixed(2),
+            monthlyKwh: (offPeakAnnualKwh / 12).toFixed(2),
             cost: offPeakAnnualCost.toFixed(2),
             hours: offPeakHrs.toFixed(0),
           },
@@ -498,6 +502,13 @@ export default function ElectricityCalculator() {
                 </div>
 
                 <div className="bg-white p-4 rounded-md">
+                  <p className="text-sm text-gray-600">Monthly Consumption</p>
+                  <p className="text-xl font-semibold text-gray-900">
+                    {results.monthlyKwh} kWh
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-md">
                   <p className="text-sm text-gray-600">Monthly Cost</p>
                   <p className="text-xl font-semibold text-gray-900">
                     {selectedCountry.symbol}
@@ -505,7 +516,7 @@ export default function ElectricityCalculator() {
                   </p>
                 </div>
 
-                <div className="bg-white p-4 rounded-md">
+                <div className="bg-white p-4 rounded-md md:col-span-2">
                   <p className="text-sm text-gray-600">Daily Cost</p>
                   <p className="text-xl font-semibold text-gray-900">
                     {selectedCountry.symbol}
@@ -529,6 +540,9 @@ export default function ElectricityCalculator() {
                         <p className="text-sm text-orange-700">
                           Annual: {results.tariffBreakdown.peak.kwh} kWh
                         </p>
+                        <p className="text-sm text-orange-700">
+                          Monthly: {results.tariffBreakdown.peak.monthlyKwh} kWh
+                        </p>
                         <p className="text-lg font-bold text-orange-900">
                           {selectedCountry.symbol}
                           {results.tariffBreakdown.peak.cost}
@@ -544,6 +558,10 @@ export default function ElectricityCalculator() {
                       <div className="space-y-1">
                         <p className="text-sm text-green-700">
                           Annual: {results.tariffBreakdown.offPeak.kwh} kWh
+                        </p>
+                        <p className="text-sm text-green-700">
+                          Monthly: {results.tariffBreakdown.offPeak.monthlyKwh}{" "}
+                          kWh
                         </p>
                         <p className="text-lg font-bold text-green-900">
                           {selectedCountry.symbol}
