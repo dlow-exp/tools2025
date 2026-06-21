@@ -20,6 +20,7 @@ import {
   Database,
   FileText,
   QrCode,
+  Braces,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -119,6 +120,14 @@ export default function HomePage() {
       icon: <QrCode className="w-8 h-8" />,
       href: "/text-to-qr",
       features: ["Instant generation", "Download PNG", "Copy to clipboard"],
+    },
+    {
+      name: "JSON Formatter",
+      description:
+        "Paste JSON to validate and format it with configurable indentation.",
+      icon: <Braces className="w-8 h-8" />,
+      href: "/json",
+      features: ["Validate JSON", "Pretty print", "Configurable indent"],
     },
   ];
 

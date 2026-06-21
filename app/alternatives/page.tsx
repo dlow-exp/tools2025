@@ -34,6 +34,15 @@ export default function AlternativesPage() {
       cons: [],
       category: "Online Tools",
     },
+    {
+      name: "CyberChef",
+      description:
+        "The Cyber Swiss Army Knife — a web app for encryption, encoding, compression, and data analysis",
+      url: "https://cyberchef.io/",
+      pros: [],
+      cons: [],
+      category: "Online Tools",
+    },
   ];
 
   const categories = [...new Set(alternatives.map((alt) => alt.category))];
